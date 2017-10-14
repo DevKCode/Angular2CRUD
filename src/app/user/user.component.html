@@ -1,0 +1,30 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-5">
+
+            <button type="button" class="btn btn-success" (click)="addUserLink()">Add New User <span class="glyphicon glyphicon-user"></span></button>
+        </div>
+        <div class="col-md-5">
+            <button type="button" class="btn btn-default">Store FireDB <span class="glyphicon glyphicon-upload"></span></button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row" *ngFor="let user of userSource; let i =index">
+        <div class="col-md-10">
+            <div class="media-body">
+                <div class="well well-sm">
+                    <h4 class="media-heading text-uppercase reviews  text-primary">{{user.name}} </h4>
+                    <span class="glyphicon glyphicon-envelope "> : {{user.email}}</span>
+                    <p class="media-comment">
+                        <span class="glyphicon glyphicon-education"></span> : {{user.job}}
+                    </p>
+                    <a class="btn btn-primary btn-circle text-uppercase btn-sm" (click)="onEditUser(i)"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    <a class="btn btn-danger btn-circle text-uppercase btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

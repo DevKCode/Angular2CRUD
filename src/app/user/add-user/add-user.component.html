@@ -1,0 +1,43 @@
+<div class="container-fluid">
+
+
+    <div class="well well-sm text-info text-capitalize">
+
+        <h4>{{pageTitle}}</h4>
+    </div>
+    <form class="form-horizontal" [formGroup]="userAddform" (ngSubmit)="onSubmit()">
+
+
+
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" name="" id="username" #username formControlName="username" class="form-control">
+        </div>
+        <div class="alert alert-danger " *ngIf="userAddform.get('username').touched && !userAddform.get('username').valid">Enter user name</div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text" class="form-control" id="email" formControlName="email">
+        </div>
+        <div class="alert alert-danger" *ngIf="userAddform.get('email').touched && !userAddform.get('email').valid">Please Enter Email Address</div>
+
+        <div class="form-group">
+            <label for="job">Job</label>
+            <input type="text" name="" id="job" class="form-control" formControlName="job">
+        </div>
+        <div class="alert alert-warning" *ngIf="userAddform.get('job').touched && !userAddform.get('job').valid">Please Enter the job</div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" name="" id="country" class="form-control" formControlName="country">
+        </div>
+        <div class="alert alert-warning" *ngIf="userAddform.get('country').touched && !userAddform.get('country').valid">Please Enter the country</div>
+
+
+
+        <hr>
+        <button type="submit" class="btn btn-primary" [disabled]="!userAddform.valid">{{buttonValue}} <span class="glyphicon glyphicon-plus-sign"></span></button>
+
+
+    </form>
+</div>
